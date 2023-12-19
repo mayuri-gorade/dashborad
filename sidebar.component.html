@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="...">
+  <!-- Add any other stylesheets or scripts your page needs -->
+</head>
+<body>
+
+<section class="row">
+  <!-- <div class="col-md-3"><p>fghjk</p></div> -->
+  <div class="side-menu col-md-2">
+    <div class="brand-name">
+      <h3>Logo</h3>
+    </div>
+    <ul>
+      <li><p><span class="fas fa-columns"></span></p> &nbsp; &nbsp;Dashboard</li>
+      <li><p><span class="fas fa-folder"></span></p> &nbsp;&nbsp;Classes</li>
+      <li><p><span class="fas fa-folder"></span></p> &nbsp;&nbsp;Resources</li>
+      <li><p><span class="fas fa-calendar-alt"></span></p> &nbsp;&nbsp;Learning Plans</li>
+      <li><p><span class="fas fa-folder"></span></p> &nbsp;&nbsp;Chat</li>
+      <li><p><span class="fas fa-pencil-alt"></span></p> &nbsp;&nbsp;Settings</li>
+    </ul>
+  </div>
+
+  <div class="col-md-7">
+   <h3 style="font-family: 'Times New Roman', Times, serif; font-size: 30px;">Dashboard</h3>
+   <div class="box row">
+    <div class="col-md-9">
+      <h5>Welcome back Anna!</h5>
+      <p>you've learned 80% of your goal of this week! <br> Keep it up and improve your results!</p>
+    </div>
+    <div class="col-md-3"><img src=".././../assets/img/abcd.jpg" alt="" ></div>
+   </div>
+   <div class="row ">
+    <div class="col-md-6 box1" >
+    <h6><b>Latest Result</b></h6>
+     <section class="row abcd"  *ngFor="let item of data" >
+      <div class="col-md-2"><span>{{item.id}}</span></div>
+        <div class="col-md-4"><span>{{item.quizTitle}}</span></div>
+         <div class="col-md-5">
+           <div class="slider">
+            <div class="slider-value" [style.width]="getPercentage(item.score)"> </div>
+            <div class="field">
+          <input type="range" min="0" max="100" [value]="item.score" steps="1" >
+          <span>{{ item.score }}</span>
+
+          </div>
+          </div>
+        </div>
+     </section>
+
+    </div>
+    <div class="col-md-5 box1"><span><app-barchart></app-barchart></span></div>
+
+
+    <div class="row box1">
+      <div class="row">
+        <div class="col-md-6"><p>Your Courses</p>
+        </div>
+        <div class="col-md-6"><p style="text-align: end;">More
+        </p></div>
+      </div>
+      <div class="col-md-4">
+        <div class="row box2">
+          <div class="col-md-3 "><button>B2</button></div>
+    <div class="col-md-3"><p>Buisness English <span>Grammar</span></p></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row box3">
+          <div class="col-md-3 "><button>B2</button></div>
+    <div class="col-md-3"><p> English <span>phrasal verbs</span></p></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row box4">
+          <div class="col-md-3 "><button>C1</button></div>
+        <div class="col-md-3"><p>buisness Spanish <span>Vocabulary</span></p></div>
+        </div>
+      </div>
+
+    </div>
+
+   </div>
+
+
+  </div>
+  <div class="col-md-3"><span><app-logout></app-logout></span></div>
+</section>
+
+</body>
+</html>
